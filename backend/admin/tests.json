@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Get all users (admin)",
+      "method": "GET",
+      "path": "/?action=users",
+      "headers": {
+        "X-Admin-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "users": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get all factions",
+      "method": "GET",
+      "path": "/?action=factions",
+      "headers": {
+        "X-Admin-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "factions": []
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

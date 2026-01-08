@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Get all forum posts",
+      "method": "GET",
+      "path": "/?action=posts",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "posts": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new forum post",
+      "method": "POST",
+      "path": "/?action=create-post",
+      "body": {
+        "userId": 1,
+        "title": "Test Post",
+        "content": "This is a test post",
+        "category": "общее"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
